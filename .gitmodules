@@ -1,0 +1,9 @@
+[submodule "transaction-service"]
+	path = transaction-service
+	url = https://github.com/hhzktoeto/transaction-service.git
+[submodule "gateway"]
+	path = gateway
+	url = https://github.com/hhzktoeto/gateway.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/hhzktoeto/frontend.git
