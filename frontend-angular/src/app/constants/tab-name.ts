@@ -1,4 +1,4 @@
 export enum TabName {
-  MAIN = "Главная",
-  STATS = "Статистика"
+    MAIN = "Главная",
+    STATS = "Статистика"
 }

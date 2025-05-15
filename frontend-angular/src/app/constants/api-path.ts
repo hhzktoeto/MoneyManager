@@ -1,5 +1,5 @@
 export enum ApiPath {
-  TRANSACTIONS = "/transactions",
-  CATEGORIES = "/categories"
+    TRANSACTIONS = "/transactions",
+    CATEGORIES = "/categories"
 }
 

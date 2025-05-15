@@ -6,7 +6,8 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
         <div>
           <label class="block text-xs text-gray-500 mb-1">Тип</label>
-          <select #typeRef class="w-full p-2 border hover:bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400">
+          <select #typeRef
+                  class="w-full p-2 border hover:bg-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400">
             <option>Расход</option>
             <option>Доход</option>
           </select>
@@ -14,25 +15,30 @@
 
         <div>
           <label class="block text-xs text-gray-500 mb-1">Категория</label>
-          <input list="categories" #categoryRef class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400" />
+          <input list="categories" #categoryRef
+                 class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"/>
           <datalist id="categories">
-            <option *ngFor="let c of categories" [value]="c.name"></option>
+            <option *ngFor="let c of categories$ | async" [value]="c.name"></option>
           </datalist>
         </div>
 
         <div>
           <label class="block text-xs text-gray-500 mb-1">Сумма</label>
-          <input #amountRef type="number" class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400" placeholder="0.00" />
+          <input #amountRef type="number"
+                 class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"
+                 placeholder="0.00"/>
         </div>
 
         <div>
           <label class="block text-xs text-gray-500 mb-1">Дата</label>
-          <input #dateRef type="date" class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400" />
+          <input #dateRef type="date"
+                 class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"/>
         </div>
 
         <div class="md:col-span-4">
           <label class="block text-xs text-gray-500 mb-1">Описание</label>
-          <input #descriptionRef type="text" class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400" />
+          <input #descriptionRef type="text"
+                 class="w-full p-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"/>
         </div>
       </div>
     </div>
@@ -40,8 +46,8 @@
 
   <div class="flex justify-end mt-6">
     <button
-      class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm z-10"
-      (click)="addTransaction()">
+            class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm z-10"
+            (click)="addTransaction()">
       Добавить
     </button>
   </div>

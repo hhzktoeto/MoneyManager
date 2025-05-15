@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {TabName} from '../constants/tab-name';
 import {CommonModule} from '@angular/common';
 import {HeaderComponent} from '../header/header.component';
-import {AddTransactionComponent} from '../add-transaction/add-transaction.component';
 import {ShowPeriod} from '../constants/show-period';
+import {AddTransactionComponent} from '../add-transaction/add-transaction.component';
 
 @Component({
   standalone: true,

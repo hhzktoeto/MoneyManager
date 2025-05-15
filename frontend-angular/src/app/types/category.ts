@@ -1,7 +1,7 @@
 export interface CategoryDTO {
-  name: string;
+    name: string;
 }
 
 export interface Category extends CategoryDTO {
-  id: number;
+    id: number;
 }

@@ -5,20 +5,19 @@
     <!-- Табы -->
     <div class="flex space-x-4 mb-4 gap-2">
       <button
-        *ngFor="let tab of Object.values(TabName)"
-        [ngClass]="{
+              *ngFor="let tab of Object.values(TabName)"
+              [ngClass]="{
           'px-4 py-2 rounded-full text-sm font-medium mb-2': true,
           'bg-primary-600 text-white shadow-md': activeTab === tab,
           'bg-gray-200 text-gray-600 hover:bg-gray-200': activeTab !== tab
         }"
-        (click)="setTab(tab)">
+              (click)="setTab(tab)">
         {{ tab }}
       </button>
 
       <div class="flex-grow flex justify-end">
-        <select
-          class="w-auto py-2 px-2 border rounded-lg text-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
-          #selectElement (change)="changeShowPeriod(selectElement.value)">
+        <select class="w-auto py-2 px-2 border rounded-lg text-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                #selectElement (change)="changeShowPeriod(selectElement.value)">
           <option *ngFor="let option of Object.values(ShowPeriod)" [value]="option">
             {{ option }}
           </option>
@@ -29,7 +28,7 @@
     <!-- Главная -->
     <ng-container *ngIf="activeTab === 'Главная'">
       <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
-        <!-- <app-add-transaction /> -->
+        <app-add-transaction/>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
