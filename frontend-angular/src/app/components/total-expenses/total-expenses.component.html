@@ -1,0 +1,11 @@
+<div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Расходы</h2>
+        <span class="material-symbols-outlined text-red-500">trending_down</span>
+    </div>
+    <p class="text-3xl font-bold mb-2">{{ totalAmount() | number: "1.2-2" }}</p>
+    <div class="flex items-center text-red-500">
+        <span class="material-symbols-outlined text-sm mr-1">arrow_downward</span>
+        <span class="text-sm">+$320 from last month</span>
+    </div>
+</div>

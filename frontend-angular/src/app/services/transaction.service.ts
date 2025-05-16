@@ -1,22 +1,21 @@
-import {Injectable} from '@angular/core';
-import {api} from '../api/api';
-import {Observable} from 'rxjs';
+import {inject, Injectable} from '@angular/core';
+import {ApiService} from './api.service';
 import {Transaction, TransactionDTO} from '../types/transaction';
 import {ApiPath} from '../constants/api-path';
 
 @Injectable({providedIn: "root"})
 export class TransactionService {
-    constructor(private readonly api: api) {}
+    private readonly apiService = inject(ApiService);
 
-    getAll(): Observable<Array<Transaction>> {
-        return this.api.getAll<Transaction>(ApiPath.TRANSACTIONS);
+    async getAll(): Promise<Transaction[]> {
+        return this.apiService.getAll<Transaction>(ApiPath.TRANSACTIONS);
     }
 
-    create(dto: TransactionDTO): Observable<Transaction> {
-        return this.api.add<TransactionDTO, Transaction>(ApiPath.TRANSACTIONS, dto);
+    async create(dto: TransactionDTO): Promise<Transaction> {
+        return this.apiService.add<TransactionDTO, Transaction>(ApiPath.TRANSACTIONS, dto);
     }
 
-    delete(id: number): Observable<void> {
-        return this.api.delete(ApiPath.TRANSACTIONS, id);
+    async delete(id: number): Promise<void> {
+        return this.apiService.delete(ApiPath.TRANSACTIONS, id);
     }
 }

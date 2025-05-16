@@ -1,15 +1,14 @@
 // services/category.service.ts
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import {api} from '../api/api';
+import {inject, Injectable} from '@angular/core';
+import {ApiService} from './api.service';
 import {Category} from '../types/category';
 import {ApiPath} from '../constants/api-path';
 
 @Injectable({providedIn: 'root'})
 export class CategoryService {
-    constructor(private readonly api: api) {}
+    private readonly apiService = inject(ApiService)
 
-    getAll(): Observable<Category[]> {
-        return this.api.getAll<Category>(ApiPath.CATEGORIES);
+    async getAll(): Promise<Category[]> {
+        return this.apiService.getAll<Category>(ApiPath.CATEGORIES);
     }
 }
