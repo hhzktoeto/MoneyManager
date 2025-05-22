@@ -3,11 +3,6 @@ services:
     build: ./gateway
     ports:
       - "8080:8080"
-    environment:
-      - SPRING_PROFILES_ACTIVE=prod
-      - SPRING_CLOUD_GATEWAY_MVC_ROUTES_0_ID=transaction-service
-      - SPRING_CLOUD_GATEWAY_MVC_ROUTES_0_URI=http://transaction-service:8081
-      - SPRING_CLOUD_GATEWAY_MVC_ROUTES_0_PREDICATES_0=Path=/transactions/**,/categories/**
     depends_on:
       - transaction-service
     networks:
@@ -15,10 +10,6 @@ services:
 
   transaction-service:
     build: ./transaction-service
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://mnmngr-postgres:5432/appdb
-      - SPRING_DATASOURCE_USERNAME=admin
-      - SPRING_DATASOURCE_PASSWORD=JAS)F8g60KEGF)$
     depends_on:
       - mnmngr-postgres
     networks:
